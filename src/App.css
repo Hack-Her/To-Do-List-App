@@ -1,38 +1,127 @@
+html {
+  background-color: rgb(247, 237, 152);
+  font-family: Arial, sans-serif;
+  padding: 10px;
+}
+
 .App {
   text-align: center;
+  max-width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Form styles */
+form {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+form input {
+  height: 40px;
+  flex: 1 1 60%;
+  min-width: 200px;
+  padding: 0 10px;
+  font-size: 16px;
+}
+
+form button {
+  flex: 1 1 30%;
+  min-width: 100px;
+  height: 40px;
+  font-size: 16px;
+  background-color: black;
   color: white;
+  border: none;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+form button:hover {
+  background-color: #333;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Outer container for list */
+.outerDiv {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 0 10px;
+}
+
+/* List styles */
+.outerDiv ul {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.outerDiv ul li {
+  color: white;
+  background-color: black;
+  padding: 10px 50px 10px 15px;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  position: relative;
+  text-align: left;
+  border-radius: 6px;
+  word-break: break-word;
+}
+
+/* Delete icon */
+.outerDiv ul li span {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 20px;
+  color: red;
+  cursor: pointer;
+}
+
+/* Completed item */
+.completetodo {
+  text-decoration: line-through;
+  color: red !important;
+  background-color: rgb(134, 134, 130) !important;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  form {
+    flex-direction: column;
+    align-items: stretch;
   }
-  to {
-    transform: rotate(360deg);
+
+  form input,
+  form button {
+    flex: 1 1 100%;
+  }
+
+  .outerDiv ul li {
+    font-size: 1rem;
+    padding-right: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  form input,
+  form button {
+    font-size: 14px;
+    height: 35px;
+  }
+
+  .outerDiv ul li {
+    font-size: 1rem;
+    padding-right: 35px;
   }
 }
